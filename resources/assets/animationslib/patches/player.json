@@ -1,0 +1,4 @@
+﻿[
+  { "side": "Server", "file": "game:entities/humanoid/player", "op": "add", "path": "/client/behaviors/-", "value": { "code": "AnimationsLib:FirstPersonAnimations" } },
+  { "side": "Server", "file": "game:entities/humanoid/player", "op": "add", "path": "/client/behaviors/-", "value": { "code": "AnimationsLib:ThirdPersonAnimations" } }
+]
