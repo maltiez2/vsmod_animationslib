@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Vintagestory.API.Common;
 
-namespace AnimationsLib.Integration;
+namespace AnimationsLib.Utils;
 
 public sealed class ObjectCache<TKey, TValue> : IDisposable
     where TKey : notnull

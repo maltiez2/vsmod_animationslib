@@ -1,4 +1,4 @@
-﻿using AnimationsLib;
+﻿using AnimationsLib.Utils;
 using HarmonyLib;
 using System.Reflection;
 using System.Reflection.Emit;
