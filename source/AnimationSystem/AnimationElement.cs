@@ -275,7 +275,7 @@ public readonly struct AnimationElementRotation
 
         int spin = to.Spin - from.Spin;
 
-        if (!shortestAngleDistance && spin != 0)
+        if (false)//!shortestAngleDistance && spin != 0)
         {
             noSpinInterpolation.ToAxisAngle(out Vector3 axis, out float angle);
 
