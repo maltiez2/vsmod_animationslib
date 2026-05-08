@@ -19,6 +19,8 @@ public sealed class AnimationsLibSystem : ModSystem
     public AnimationSyncrhonizerServer? ServerTpAnimationSynchronizer { get; private set; }
     public SoundsSynchronizerClient? ClientSoundsSynchronizer { get; private set; }
     public SoundsSynchronizerServer? ServerSoundsSynchronizer { get; private set; }
+    public AttachableSystemClient? ClientAttachableSystem { get; private set; }
+    public AttachableSystemServer? ServerAttachableSystem { get; private set; }
 
     public IShaderProgram? AnimatedItemShaderProgram => _shaderProgram;
     public IShaderProgram? AnimatedItemShaderProgramFirstPerson => _shaderProgramFirstPerson;
@@ -48,6 +50,7 @@ public sealed class AnimationsLibSystem : ModSystem
         ClientVanillaAnimations = new(api);
         ClientTpAnimationSynchronizer = new(api);
         ClientSoundsSynchronizer = new(api);
+        ClientAttachableSystem = new(api);
     }
 
     public override void StartServerSide(ICoreServerAPI api)
@@ -56,6 +59,7 @@ public sealed class AnimationsLibSystem : ModSystem
         ServerVanillaAnimations = new(api);
         ServerTpAnimationSynchronizer = new(api);
         ServerSoundsSynchronizer = new(api);
+        ServerAttachableSystem = new(api);
     }
 
     public override void AssetsFinalize(ICoreAPI api)

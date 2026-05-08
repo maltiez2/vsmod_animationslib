@@ -2,6 +2,7 @@
 using AnimationsLib.Integration.Transpilers;
 using AnimationsLib.Utils;
 using OpenTK.Mathematics;
+using OverhaulLib.Utils;
 using System.Diagnostics;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -105,7 +106,7 @@ public sealed class ThirdPersonAnimationsBehavior : EntityBehavior, IDisposable
 
         if (!_animationsManager.GetAnimation(out Animation? animation, requestByCode.Animation, _player, firstPerson: false))
         {
-            LoggerUtil.Verbose(_api, this, $"Animation '{requestByCode.Animation}' was not found");
+            Log.Verbose(_api, this, $"Animation '{requestByCode.Animation}' was not found");
             Debug.WriteLine($"Animation '{requestByCode.Animation}' was not found");
             return;
         }

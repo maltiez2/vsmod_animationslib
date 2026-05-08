@@ -2,6 +2,7 @@
 using AnimationsLib.Integration.Transpilers;
 using AnimationsLib.Utils;
 using OpenTK.Mathematics;
+using OverhaulLib.Utils;
 using System.Diagnostics;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -49,7 +50,7 @@ public sealed class FirstPersonAnimationsBehavior : EntityBehavior, IDisposable
         _thirdPersonAnimations = entity.GetBehavior<ThirdPersonAnimationsBehavior>();
         if (_thirdPersonAnimations == null)
         {
-            LoggerUtil.Error(entity.Api, this, $"Failed to get entity behavior for third person animations.");
+            Log.Error(entity.Api, this, $"Failed to get entity behavior for third person animations.");
         }
     }
 
@@ -506,7 +507,7 @@ public sealed class FirstPersonAnimationsBehavior : EntityBehavior, IDisposable
 
         if (!_animationsManager.GetAnimation(out Animation? animation, request.Animation, _player, firstPerson: true))
         {
-            LoggerUtil.Verbose(_api, this, $"Animation '{request.Animation}' was not found");
+            Log.Verbose(_api, this, $"Animation '{request.Animation}' was not found");
             Debug.WriteLine($"Animation '{request.Animation}' was not found");
             return null;
         }

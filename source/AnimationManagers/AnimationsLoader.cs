@@ -1,5 +1,6 @@
 ﻿using AnimationsLib.Utils;
 using Newtonsoft.Json.Linq;
+using OverhaulLib.Utils;
 using System.Diagnostics.CodeAnalysis;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -117,7 +118,7 @@ public sealed class AnimationsLoader
         }
         catch (Exception exception)
         {
-            LoggerUtil.Error(_api, this, $"Error on parsing animations file '{asset.Location}'.\nException: {exception}");
+            Log.Error(_api, this, $"Error on parsing animations file '{asset.Location}'.\nException: {exception}");
             return result;
         }
 
@@ -137,7 +138,7 @@ public sealed class AnimationsLoader
             }
             catch (Exception exception)
             {
-                LoggerUtil.Error(_api, this, $"Error on parsing animation '{code}' from '{asset.Location}'.\nException: {exception}");
+                Log.Error(_api, this, $"Error on parsing animation '{code}' from '{asset.Location}'.\nException: {exception}");
             }
         }
 

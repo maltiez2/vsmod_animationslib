@@ -1,4 +1,5 @@
 ﻿using AnimationsLib.Utils;
+using OverhaulLib.Utils;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -118,7 +119,7 @@ public sealed class Attachment : IDisposable
 
             if (!_api.Assets.Exists(new(shapePath + ".json")))
             {
-                LoggerUtil.Warn(_api, this, $"Shape was not found: {shapePath}");
+                Log.Warn(_api, this, $"Shape was not found: {shapePath}");
                 return;
             }
 
@@ -143,7 +144,7 @@ public sealed class Attachment : IDisposable
         AttachmentPointAndPose? attachmentPointAndPose = parentShape.GetAnimator(entity.EntityId)?.GetAttachmentPointPose(_attachmentPointCode);
         if (attachmentPointAndPose == null)
         {
-            LoggerUtil.Warn(_api, this, $"Attachment point '{_attachmentPointCode}' not found");
+            Log.Warn(_api, this, $"Attachment point '{_attachmentPointCode}' not found");
             return;
         }
         AttachmentPoint attachmentPoint = attachmentPointAndPose.AttachPoint;

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ModName>Animations lib</ModName>
     <ModType>code</ModType>
-    <ModVersion>0.0.2</ModVersion>
+    <ModVersion>0.0.3</ModVersion>
     <ModId>animationslib</ModId>
     <Description></Description>
     <Side>universal</Side>
@@ -18,8 +18,8 @@
 
   <!-- Dependencies -->
   <ItemGroup>
-    <Dependencies Include="game" Version="*" />
     <Dependencies Include="jsonpatcheslib" Version="1.4.1" />
+    <Dependencies Include="overhaullib" Version="2.0.8" />
   </ItemGroup>
 
   <!-- Project settings -->

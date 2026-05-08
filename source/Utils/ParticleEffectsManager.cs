@@ -9,6 +9,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+using OverhaulLib.Utils;
 
 namespace AnimationsLib.Utils;
 
@@ -46,7 +47,7 @@ public class ParticleEffectsManager
             }
             catch (Exception exception)
             {
-                LoggerUtil.Error(api, this, $"Error on parsing particle effects for '{asset.Location.Domain}':\n{exception}");
+                Log.Error(api, this, $"Error on parsing particle effects for '{asset.Location.Domain}':\n{exception}");
             }
         }
 
@@ -176,7 +177,7 @@ public class ParticleEffectsManager
         }
         catch (Exception exception)
         {
-            LoggerUtil.Error(_api, this, $"Error on spawning particles: {exception}");
+            Log.Error(_api, this, $"Error on spawning particles: {exception}");
             return;
         }
 
